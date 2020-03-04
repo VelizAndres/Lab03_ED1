@@ -1,5 +1,6 @@
 ﻿@model Prueba_MVC.Models.mPedido
 
+
 @{
     ViewBag.Title = "Venta";
 }
@@ -7,10 +8,10 @@
 <h2>Venta</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>mPedido</h4>
         <hr />
@@ -38,6 +39,51 @@
                 @Html.ValidationMessageFor(model => model.Nit, "", new { @class = "text-danger" })
             </div>
         </div>
+        <table class="table">
+            <tr>
+                <th>
+                    <div>Cantidad</div>
+                </th>
+                <th>
+                    <div>Producto</div>
+                </th>
+                <th>
+                    <div>Precio Unitario</div>
+                </th>
+                <th>
+                <div>Subtotal</div>
+                </th>
+
+                <th></th>
+                @foreach (var item in Model.Pedidos)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio_uni)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subtotal)
+                    </td>
+                    <td>
+                        @*   @Html.ActionLink("Delete", "Delete", new { id = item.Nombre })*@
+                    </td>
+                </tr>
+            }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Total</td>
+                    <td>@ViewBag.TotalCompra</td>
+                    <td>  </td>
+                </tr>
+
+            </table>
 
 
 
@@ -45,21 +91,13 @@
 
 
 
- @*      <div class="form-group">
-            @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
-            </div>
-       </div>
-     *@
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
             </div>
         </div>
-    </div>
-}
+    }
 
 <div>
     @Html.ActionLink("Back to List", "Index")

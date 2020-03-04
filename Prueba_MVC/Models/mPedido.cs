@@ -11,15 +11,13 @@ namespace Prueba_MVC.Models
         private string name;
         private string direccion;
         private string nit;
-        private int[] unidad;
-        private List<mFarmaco> pedidos;
+        private LinkedList<mCompraFarmaco> pedidos;
         private double total;
 
         public string Name { get => name; set => name = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Nit { get => nit; set => nit = value; }
-        public int[] Unidad { get => unidad; set => unidad = value; }
-        public List<mFarmaco> Pedidos { get => pedidos; set => pedidos = value; }
+        public LinkedList<mCompraFarmaco> Pedidos { get => pedidos; set => pedidos = value; }
         public double Total { get => total; set => total = value; }
     }
 }

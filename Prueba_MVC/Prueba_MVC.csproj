@@ -126,10 +126,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Herramientas\Almacen\Caja_arbol.cs" />
+    <Compile Include="Herramientas\Almacen\CarritoCompra.cs" />
+    <Compile Include="Herramientas\Almacen\ListaPedidos.cs" />
     <Compile Include="Herramientas\Estructura\BiArbol.cs" />
     <Compile Include="Herramientas\Estructura\Nodo.cs" />
     <Compile Include="Herramientas\Interfaz\Arbol.cs" />
     <Compile Include="Herramientas\Interfaz\IArbol.cs" />
+    <Compile Include="Models\mCompraFarmaco.cs" />
     <Compile Include="Models\mFarmaco.cs" />
     <Compile Include="Models\mPedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

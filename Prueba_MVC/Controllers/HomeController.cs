@@ -69,7 +69,7 @@ namespace Prueba_MVC.Controllers
                         //                          nuevo.Linea = pos;
                                  nuevo.Linea = posicion;
 
-                        posicion += lector.Length + 2;
+                        posicion += lector.Length +2;
                         if (dispo > 0)
                          {
                              Caja_arbol.Instance.arbolFarm.Agregar(nuevo, mFarmaco.ComparName);
