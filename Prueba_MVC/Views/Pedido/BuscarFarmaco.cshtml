@@ -1,9 +1,11 @@
-﻿@model IEnumerable<Prueba_MVC.Models.mFarmaco>
+﻿@model IEnumerable<Prueba_MVC.Models.mCompraFarmaco>
 
 @{
     ViewBag.Title = "Buscar Farmaco";
 
 }
+
+
 
 <h2>Buscar Farmaco</h2>
 <div>
@@ -17,7 +19,7 @@
 
 <table class="table">
     <tr>
-        <th>  Nombre </th>
+        <th> <b>Nombre</b>  </th>
         <th>  Descripción </th>
         <th>  Productora </th>
         <th>  Precio </th>
@@ -33,11 +35,64 @@
         <th>  @ViewBag.Precio </th>
         <th>  @ViewBag.Existencia </th>
         <td>
-            @Html.ActionLink("Agregar", "Edit", new { /* id=item.PrimaryKey */ }) |
-
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @using (Html.BeginForm("Agregar", "Pedido"))
+                {
+                    <label>Cuantos desea agregar?</label>
+                    <input type="text" name="cantidad" />
+                    <button type="submit">Agregar</button>
+                }
         </td>
     </tr>
 
 
 </table>
+
+
+<hr>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio_uni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subtotal)
+        </th>
+
+        <th></th>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio_uni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subtotal)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Nombre })
+            </td>
+        </tr>
+    }
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>@ViewBag.TotalCompra</td>
+            <td>  </td>
+        </tr>
+
+    </table>
+
