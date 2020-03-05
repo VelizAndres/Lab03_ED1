@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace Prueba_MVC.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller 
     {
         public ActionResult Index()
         {
@@ -87,13 +87,113 @@ namespace Prueba_MVC.Controllers
             return View("Exportacion");
         }
 
+        //public static List<mCompraFarmaco> GuardandoFarmaco = new List<mCompraFarmaco>();
+
+        //public ActionResult Recarga(string id, FormCollection collection)
+        //{
+        //    mCompraFarmaco Recarga_Farmaco = new mCompraFarmaco()
+        //    {
+        //        Cantidad=collection["Cantidad"]
+        //    };
+        //    var contador = 0;
+        //    foreach (var item in GuardandoFarmaco)
+        //    {
+        //        if (item.Nombre == id)
+        //        {
+        //            GuardandoFarmaco[contador] = Recarga_Farmaco;
+        //        }
+        //        else
+        //        {
+        //            contador++;
+        //        }
 
 
-        public ActionResult Recarga()
+        //        return View(Recarga_Farmaco);
+        //}
+
+
+        public ActionResult Recarga(int id, FormCollection collection)
         {
+            
+           
+            /*
+            // acceder al archivo para leer
+            var file = new StreamReader("C:\\Users\\HP\\Downloads\\MOCK_DATA (4) (1).csv");
+
+            //leemos linea 
+            var linea = file.ReadLine();
+            linea = file.ReadLine();
+            */
+            //lista guardar
             mCompraFarmaco farmaco = new mCompraFarmaco();
+
+            /*
+            //lista de datos
+            var datos = new List<string>();
+
+            //mientra no se termine el archivo
+            while (linea != null)
+            {
+                while (linea != "")
+                {
+                    var coma = linea.IndexOf(',');
+                    var comilla = linea.IndexOf('"');
+                    // si la coma esta antes de la comilla
+                    if (coma < comilla)
+                    {
+                        var x = linea.Substring(0, linea.IndexOf(','));
+                        datos.Add(x);
+                        linea = linea.Remove(0, linea.IndexOf(',') + 1);
+                    }
+                    else//si la comilla esta antes de la coma
+                    {
+                        if (comilla == -1 && coma == -1)
+                        {
+                            datos.Add(linea);
+                            linea = "";
+                            // asignas datos de la lista a el objeto
+                            var nuevo = new mCompraFarmaco
+                            {
+                                Id = int.Parse(datos[0]),
+                                Nombre = datos[1],
+                                Descripcion = datos[2],
+                                Casa = datos[3],
+                                Precio = double.Parse(datos[4].Replace("$", "")),
+                                Cantidad = int.Parse(datos[5])
+
+                            };
+                            Farmacos.Add(nuevo);
+                            datos = new List<string>();
+                        }
+                        else if (comilla == -1)
+                        {
+                            var c = linea.Substring(0, linea.IndexOf(','));
+                            datos.Add(c);
+                            linea = linea.Remove(0, linea.IndexOf(',') + 1);
+                        }
+                        else
+                        {
+
+                            linea = linea.Remove(0, 1);
+                            comilla = linea.IndexOf('"');
+                            var x = linea.Substring(0, comilla);
+                            datos.Add(x);
+                            linea = linea.Remove(0, comilla + 2);
+                        }
+                    }
+                }
+                //id f
+                //nombre
+                //descripcion
+                //casa
+                //precio
+                //existencia
+                linea = file.ReadLine();
+            }
+            */
             return View(farmaco);
         }
+
 
         //Acctión para cargar los datos del archivo csv al arbol
         [HttpPost]
