@@ -177,6 +177,7 @@
     <Content Include="Views\Pedido\VentasHoy.cshtml" />
     <Content Include="Views\Home\Recargar.cshtml" />
     <Content Include="Views\Home\Exportacion.cshtml" />
+    <Content Include="Views\Home\Recarga.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
