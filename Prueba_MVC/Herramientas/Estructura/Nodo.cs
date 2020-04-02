@@ -13,11 +13,12 @@ namespace Prueba_MVC.Herramientas.Estructura
         private Nodo<T> hijoizq;
         private Nodo<T> hijoder;
         private T valor;
-
+        private int altura;
 
         public Nodo<T> Padre { get => padre; set => padre = value; }
         public Nodo<T> Hijoizq { get => hijoizq; set => hijoizq = value; }
         public Nodo<T> Hijoder { get => hijoder; set => hijoder = value; }
         public T Valor { get => valor; set => valor = value; }
+        public int Altura { get => altura; set => altura = value; }
     }
 }

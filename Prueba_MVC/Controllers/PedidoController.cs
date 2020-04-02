@@ -18,6 +18,15 @@ namespace Prueba_MVC.Controllers
             mPedido comprador = new mPedido();
             comprador.Pedidos = CarritoCompra.Instance.carrito;
             ViewBag.TotalCompra= CarritoCompra.Instance.total;
+
+            int cant_produc = CarritoCompra.Instance.carrito.Count;
+            var item = CarritoCompra.Instance.carrito.First;
+            for (int num_prod = 0; num_prod < cant_produc; num_prod++)
+            {
+                CarritoCompra.Instance.carrito.Remove(item);
+                item = item.Next;
+            }
+            CarritoCompra.Instance.total = 0;
             return View(comprador);
         }
 
@@ -30,12 +39,18 @@ namespace Prueba_MVC.Controllers
         {
             try
             {
-                CarritoCompra.Instance.carrito.Clear();
+                int cant_produc = CarritoCompra.Instance.carrito.Count;
+                var item = CarritoCompra.Instance.carrito.First;
+                for (int num_prod = 0; num_prod < cant_produc; num_prod++)
+                {
+                    Delete(item.Value.Nombre);
+                    item = item.Next;
+                }
                 return View(CarritoCompra.Instance.carrito);
             }
             catch
             {
-                return View("CargaArch","Home");
+                return View("CargaArch", "Home");
             }
         }
 
@@ -144,8 +159,6 @@ namespace Prueba_MVC.Controllers
 
 
 
-
-
                     //Se procede a la eliminación de producto comprado en la exitencia
                     using (var archivo = new FileStream(Caja_arbol.Instance.direccion_archivo_arbol, FileMode.Open))
                     {
@@ -159,6 +172,10 @@ namespace Prueba_MVC.Controllers
                                 existencia_actual = "0" + existencia_actual;
                             }
                             escritor.WriteLine(existencia_actual);
+                            if (int.Parse(existencia_actual) == 0)
+                            {
+                                Caja_arbol.Instance.arbolFarm.Eliminar(farmaco, mFarmaco.ComparName);
+                            }
                         }
                     }
                 }
@@ -196,27 +213,63 @@ namespace Prueba_MVC.Controllers
                         farmaco = item;
                     }
                 }
-                 
                 mFarmaco drug = new mFarmaco();
                 drug.Nombre = id;
                 drug = Caja_arbol.Instance.arbolFarm.Buscar(drug, mFarmaco.ComparName);
-                int linea_buscad = drug.Linea;
-                string info_farmaco = "";
-                using (FileStream archivo = new FileStream(Caja_arbol.Instance.direccion_archivo_arbol, FileMode.Open))
+                int linea_buscad = 0;
+                string[] infor_separada = new string[7];
+                if (drug != null)
                 {
-                    using (StreamReader lector = new StreamReader(archivo))
+                    linea_buscad = drug.Linea;
+                    string info_farmaco = "";
+                    using (FileStream archivo = new FileStream(Caja_arbol.Instance.direccion_archivo_arbol, FileMode.Open))
                     {
-                        archivo.Seek(linea_buscad, SeekOrigin.Begin);
-                        info_farmaco = lector.ReadLine();
-                        linea_buscad += info_farmaco.Length;
+                        using (StreamReader lector = new StreamReader(archivo))
+                        {
+                            archivo.Seek(linea_buscad, SeekOrigin.Begin);
+                            info_farmaco = lector.ReadLine();
+                            linea_buscad += info_farmaco.Length;
+                        }
                     }
+                    Regex regx = new Regex("," + "(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+                    infor_separada = regx.Split(info_farmaco);
                 }
-                Regex regx = new Regex("," + "(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
-                string[] infor_separada = regx.Split(info_farmaco);
-
-                //Se procede a la agregacion del producto regresado a la exitencia
-                using (var archivo = new FileStream(Caja_arbol.Instance.direccion_archivo_arbol, FileMode.Open))
+                else
                 {
+                    using (FileStream archivo = new FileStream(Caja_arbol.Instance.direccion_archivo_arbol, FileMode.Open))
+                    {
+                        using (var archivolec = new StreamReader(archivo))
+                        {
+                            bool Encontrado = false;
+                            string lector = archivolec.ReadLine();
+                            int posicion = lector.Length + 2;
+                            
+                            lector = archivolec.ReadLine();
+                            while (lector != null && !Encontrado)
+                            {
+                                string[] cajatext = lector.Split(Convert.ToChar(","));
+                                mFarmaco nuevo = new mFarmaco();
+                                nuevo.Nombre = cajatext[1];
+                                nuevo.Linea = posicion;
+                                posicion += lector.Length + 2;
+                                if (nuevo.Nombre == id)
+                                {
+                                    Caja_arbol.Instance.arbolFarm.Agregar(nuevo, mFarmaco.ComparName);
+                                    Encontrado = true;
+                                    linea_buscad = nuevo.Linea + lector.Length;
+                                    infor_separada[infor_separada.Length - 1] = "00";
+                                }
+                                lector = archivolec.ReadLine();
+                            }
+                        }
+                    }
+
+                }
+
+
+                    //Se procede a la agregacion del producto regresado a la exitencia
+                    using (var archivo = new FileStream(Caja_arbol.Instance.direccion_archivo_arbol, FileMode.Open))
+                    {
                     using (var escritor = new StreamWriter(archivo))
                     {
                         int posicion_existencia = linea_buscad - infor_separada[infor_separada.Length - 1].Length;

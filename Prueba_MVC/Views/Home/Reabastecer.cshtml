@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Prueba_MVC.Models.mFarmaco>
+
+@{
+    ViewBag.Title = "Reabastecer";
+}
+
+<h2>Reabastecer</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+
+        <th>
+            Acción
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+
+            <td>
+                @Html.ActionLink("Reabastecer", "Recargar", new { id = item.Linea })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>

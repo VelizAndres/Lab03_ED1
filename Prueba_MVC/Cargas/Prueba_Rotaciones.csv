@@ -1,0 +1,23 @@
+id,nombre,descripcion,casa_productora,precio,existencia
+1,K,"Adverse effect of amphetamines, subsequent encounter","Medline Industries, Inc.",$540.21,10
+2,O,Asymptomatic varicose veins of right lower extremity,"Teva Women's Health, Inc.",$825.55,05
+3,T,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+4,I,"Poisoning by succinimides and oxazolidinediones, undet",Jubilant HollisterStier LLC,$812.10,08
+5,G,"Unspecified injury of lung, bilateral, initial encounter",Apotheca Company,$514.56,03
+6,D,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+7,U,"Adverse effect of amphetamines, subsequent encounter","Medline Industries, Inc.",$540.21,10
+8,W,Asymptomatic varicose veins of right lower extremity,"Teva Women's Health, Inc.",$825.55,05
+9,Y,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+10,H,"Poisoning by succinimides and oxazolidinediones, undet",Jubilant HollisterStier LLC,$812.10,08
+11,B,"Unspecified injury of lung, bilateral, initial encounter",Apotheca Company,$514.56,03
+12,E,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+13,C,"Adverse effect of amphetamines, subsequent encounter","Medline Industries, Inc.",$540.21,10
+14,N,Asymptomatic varicose veins of right lower extremity,"Teva Women's Health, Inc.",$825.55,05
+15,M,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+16,S,"Poisoning by succinimides and oxazolidinediones, undet",Jubilant HollisterStier LLC,$812.10,08
+17,P,"Unspecified injury of lung, bilateral, initial encounter",Apotheca Company,$514.56,03
+18,Q,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+19,R,Asymptomatic varicose veins of right lower extremity,"Teva Women's Health, Inc.",$825.55,05
+20,X,Asymptomatic varicose veins of right lower extremity,"Teva Women's Health, Inc.",$825.55,05
+21,V,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+22,J,"Adverse effect of amphetamines, subsequent encounter","Medline Industries, Inc.",$540.21,10

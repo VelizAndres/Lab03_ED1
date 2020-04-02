@@ -1,0 +1,11 @@
+id,nombre,descripcion,casa_productora,precio,existencia
+1,M,"Adverse effect of amphetamines, subsequent encounter","Medline Industries, Inc.",$540.21,00
+2,K,Asymptomatic varicose veins of right lower extremity,"Teva Women's Health, Inc.",$825.55,05
+3,P,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+4,A,"Poisoning by succinimides and oxazolidinediones, undet",Jubilant HollisterStier LLC,$812.10,08
+5,L,"Unspecified injury of lung, bilateral, initial encounter",Apotheca Company,$514.56,03
+6,N,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+7,S,"Poisoning by succinimides and oxazolidinediones, undet",Jubilant HollisterStier LLC,$812.10,08
+8,R,"Unspecified injury of lung, bilateral, initial encounter",Apotheca Company,$514.56,03
+9,T,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
+10,V,"Poisoning by succinimides and oxazolidinediones, undet",Jubilant HollisterStier LLC,$812.10,08

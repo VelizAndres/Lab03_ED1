@@ -1,7 +1,7 @@
 id,nombre,descripcion,casa_productora,precio,existencia
 1,REMEDY Calazime Skin Protectant,"Adverse effect of amphetamines, subsequent encounter","Medline Industries, Inc.",$540.21,10
 2,LOESTRIN Fe 1/20,Asymptomatic varicose veins of right lower extremity,"Teva Women's Health, Inc.",$825.55,05
-3,Milk of Magnesia,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,00
+3,Milk of Magnesia,"Disp fx of lateral epicondyl of r humer, 7thP",Walgreen Company,$937.66,02
 4,"Pollens - Weeds and Garden Plants, Ragweed, Giant Ambrosia trifida","Poisoning by succinimides and oxazolidinediones, undet",Jubilant HollisterStier LLC,$812.10,08
 5,Colloidal Silver,"Unspecified injury of lung, bilateral, initial encounter",Apotheca Company,$514.56,03
 6,Venlafaxine,Other superficial bite of unspecified back wall of thorax,Clinical Solutions Wholesale,$858.27,11
@@ -10,12 +10,12 @@ id,nombre,descripcion,casa_productora,precio,existencia
 9,Divalproex Sodium,Partial traumatic transphalangeal amputation of l rng fngr,Mylan Institutional Inc.,$336.21,09
 10,ControlRx,"Corrosion of second degree back of right hand, sequela",3M ESPE Dental Products,$699.66,13
 11,CITALOPRAM,"Milt op w thermal radn effect of nuclear weapon, milt, init","International Labs, Inc.",$328.92,05
-12,Solutions,"Injury of acoustic nerve, left side, subsequent encounter","Avon Products, Inc.",$734.89,01
+12,Solutions,"Injury of acoustic nerve, left side, subsequent encounter","Avon Products, Inc.",$734.89,06
 13,Treatment Set TS330359,"Laceration w/o fb of l idx fngr w damage to nail, subs","Antigen Laboratories, Inc.",$676.95,04
 14,Corlopam,Personal history of (healed) osteoporosis fracture,"Hospira, Inc.",$547.39,11
 15,ESIKA,"Adverse effect of unsp drug/meds/biol subst, subs","Ventura Corporation (San Juan, P.R)",$546.45,03
 16,Restless Mind,"Corrosion of second degree of left knee, initial encounter",King Bio Inc.,$114.82,15
-17,Quetiapine fumarate,"Burn of second degree of unspecified foot, sequela",Major Pharmaceuticals,$118.81,02
+17,Quetiapine fumarate,"Burn of second degree of unspecified foot, sequela",Major Pharmaceuticals,$118.81,12
 18,Tri-Vitamin with Fluoride,Multiple fx of pelvis w unstable disrupt of pelvic ring,Sancilio & Company Inc,$209.88,03
 19,Lidocaine Hydrochloride,Rickettsialpox due to Rickettsia akari,REMEDYREPACK INC.,$814.86,07
 20,Acyclovir,Heat syncope,Bryant Ranch Prepack,$931.69,01

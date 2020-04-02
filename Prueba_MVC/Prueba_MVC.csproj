@@ -175,9 +175,8 @@
     <Content Include="Views\Pedido\Venta.cshtml" />
     <Content Include="Views\Pedido\BuscarFarmaco.cshtml" />
     <Content Include="Views\Pedido\VentasHoy.cshtml" />
-    <Content Include="Views\Home\Recargar.cshtml" />
     <Content Include="Views\Home\Exportacion.cshtml" />
-    <Content Include="Views\Home\Recarga.cshtml" />
+    <Content Include="Views\Home\Reabastecer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

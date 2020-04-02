@@ -1,0 +1,13 @@
+id,nombre,descripcion,casa_productora,precio,existencia
+1,C,""Adverse effect of amphetamines, subsequent encounter"",""Medline Industries, Inc."",$540.21,10
+2,B,Asymptomatic varicose veins of right lower extremity,""Teva Women's Health, Inc."",$825.55,05
+3,H,""Disp fx of lateral epicondyl of r humer, 7thP"",Walgreen Company,$937.66,02
+4,I,""Poisoning by succinimides and oxazolidinediones, undet"",Jubilant HollisterStier LLC,$812.10,08
+5,E,""Unspecified injury of lung, bilateral, initial encounter"",Apotheca Company,$514.56,03
+6,W,Other superficial bite of unspecified back wall of thorax,Clinical Solutions Wholesale,$858.27,11
+7,A,""Fibrous dysplasia (monostotic), unspecified shoulder"",Qualitest Pharmaceuticals,$159.61,05
+8,R,""Struck by falling object on oth powered watercraft, init"",""NCS HealthCare of KY, Inc dba Vangard Labs"",$136.34,11
+9,D,Partial traumatic transphalangeal amputation of l rng fngr,Mylan Institutional Inc.,$336.21,09
+10,M,""Corrosion of second degree back of right hand, sequela"",3M ESPE Dental Products,$699.66,13
+11,F,""Corrosion of second degree back of right hand, sequela"",3M ESPE Dental Products,$699.66,13
+12,G,""Struck by falling object on oth powered watercraft, init"",""NCS HealthCare of KY, Inc dba Vangard Labs"",$136.34,11
